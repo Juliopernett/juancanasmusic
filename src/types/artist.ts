@@ -113,6 +113,9 @@ export interface Artist {
     managerPhoto?: string;
     whatsapp: string;
     whatsappDisplay: string;
+    /** Enlace de WhatsApp a usar tal cual (ej. un wa.link oficial). Si se define,
+     *  tiene prioridad sobre el enlace construido a partir de `whatsapp`. */
+    whatsappUrl?: string;
     phone: string;
     email: string;
   };

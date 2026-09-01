@@ -272,6 +272,7 @@ export const artist: Artist = {
     managerPhoto: "/images/artist-studio.jpg",
     whatsapp: "573017851959",
     whatsappDisplay: "301 785 1959",
+    whatsappUrl: "https://wa.link/7uvll8",
     phone: "573017851959",
     email: "juancanaspalacio@gmail.com",
   },

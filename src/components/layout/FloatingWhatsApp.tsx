@@ -8,7 +8,9 @@ export function FloatingWhatsApp() {
   const message = encodeURIComponent(
     `Hola ${artist.stageName}, quiero información para contratar tu show.`,
   );
-  const href = `https://wa.me/${artist.booking.whatsapp}?text=${message}`;
+  const href =
+    artist.booking.whatsappUrl ??
+    `https://wa.me/${artist.booking.whatsapp}?text=${message}`;
 
   return (
     <motion.a

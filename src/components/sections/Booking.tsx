@@ -10,6 +10,8 @@ export function Booking() {
   const waMessage = encodeURIComponent(
     `Hola ${artist.stageName}, quiero información para contratar tu show.`,
   );
+  const waHref =
+    booking.whatsappUrl ?? `https://wa.me/${booking.whatsapp}?text=${waMessage}`;
 
   return (
     <section id="contrataciones" className="relative overflow-hidden bg-black py-28 sm:py-36">
@@ -57,7 +59,7 @@ export function Booking() {
 
               <div className="flex flex-col gap-4">
                 <a
-                  href={`https://wa.me/${booking.whatsapp}?text=${waMessage}`}
+                  href={waHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center justify-between gap-4 rounded-2xl bg-[#25D366] px-6 py-5 text-black transition-transform duration-300 hover:scale-[1.02]"
