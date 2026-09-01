@@ -289,7 +289,7 @@ export const artist: Artist = {
     {
       id: "desde-mi-voz",
       title: "Desde mi voz",
-      year: "2024",
+      year: "2026",
       cover: "/images/discography/desde-mi-voz.jpg",
       listenUrl: "https://open.spotify.com/intl-es/album/4kBgLsEdCQscev0oArXXJI",
       type: "album",

@@ -48,7 +48,7 @@ export function Footer() {
             <p className="text-xs text-white/30">
               Un sitio de{" "}
               <a
-                href="https://portalvallenato.com"
+                href="https://portalvallenato.com/web/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-amber-400/80 transition-colors hover:text-amber-400"
