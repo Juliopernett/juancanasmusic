@@ -34,14 +34,28 @@ function formatDisplayDate(date: Date): string {
 }
 
 /**
+ * Normaliza el enlace de Google Sheets a su export CSV.
+ * Acepta tanto el enlace "Publicar en la web" como página (.../pub o .../pubhtml)
+ * como el enlace CSV ya listo (.../pub?output=csv). Así la variable de entorno
+ * funciona aunque peguen el enlace equivocado.
+ */
+function toCsvUrl(url: string): string {
+  const u = url.trim();
+  if (/output=csv/i.test(u)) return u;
+  const base = u.replace(/\/pub(html)?(\?[^#]*)?(#.*)?$/i, "");
+  return `${base}/pub?output=csv`;
+}
+
+/**
  * Fetches upcoming presentations from a published Google Sheet (CSV export).
  * Sheet columns expected (case-insensitive): Fecha, Ciudad, Lugar, Evento, Estado.
  * Falls back to the example events in artist.ts if the sheet isn't configured
  * or fails to load, so the section never breaks or renders empty.
  */
 export async function getEvents(): Promise<EventItem[]> {
-  const sheetUrl = process.env.GOOGLE_SHEET_EVENTS_URL;
-  if (!sheetUrl) return artist.events;
+  const rawUrl = process.env.GOOGLE_SHEET_EVENTS_URL;
+  if (!rawUrl) return artist.events;
+  const sheetUrl = toCsvUrl(rawUrl);
 
   try {
     const res = await fetch(sheetUrl, { next: { revalidate: 1800 } });
