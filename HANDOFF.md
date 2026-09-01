@@ -48,5 +48,8 @@ npm run dev      # http://localhost:3000
 - Railway: deploy desde el repo.
 - Dominio `juancanasmusic.portalvallenato.com` en Railway + registros DNS en Route53.
 - Hoja de Google Sheets para la agenda → variable `GOOGLE_SHEET_EVENTS_URL` en Railway.
-  Mientras no exista, se muestran las 3 fechas de ejemplo de `artist.ts`.
+  Ya existe y está en uso local (`.env.local`, no versionado). URL a usar (formato CSV):
+  `https://docs.google.com/spreadsheets/d/e/2PACX-1vT4DyhZqfivn5kyq7eOwJZBZhvkDR8pRqJa_2A43-p_4cIuBm2d0BYV4wTfd4zvJamahKdduUHrZcKf/pub?output=csv`
+  Pegar esa misma URL en Railway → Settings → Variables. El sitio la revisa cada 30 min.
+  (La hoja fue publicada como `pubhtml`; el código necesita la variante `pub?output=csv`.)
 - Revisar en celular (Safari + Chrome) antes de entregar.
