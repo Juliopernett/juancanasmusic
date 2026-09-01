@@ -22,7 +22,7 @@ export function Loader() {
         <motion.div
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black"
+          className="pointer-events-none fixed inset-0 z-[100] flex items-center justify-center bg-black"
         >
           <div className="flex flex-col items-center gap-6">
             <motion.h1

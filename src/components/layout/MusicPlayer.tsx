@@ -32,8 +32,8 @@ export function MusicPlayer() {
   const playableVideo = artist.videos.find((v) => v.youtubeId);
 
   return (
-    <div className="fixed inset-x-0 bottom-24 z-40 flex justify-center px-16 sm:bottom-6 sm:px-4">
-      <div className="w-full max-w-[calc(100vw-8rem)] sm:max-w-sm md:max-w-md">
+    <div className="pointer-events-none fixed inset-x-0 bottom-24 z-40 flex justify-center px-16 sm:bottom-6 sm:px-4">
+      <div className="pointer-events-auto w-full max-w-[calc(100vw-8rem)] sm:max-w-sm md:max-w-md">
         <AnimatePresence mode="wait">
           {open ? (
             <motion.div
